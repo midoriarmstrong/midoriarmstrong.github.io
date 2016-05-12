@@ -144,7 +144,7 @@ h1 {
 h2 {
   color: #fff;
   background-color: #5398c8;
-  width: 260px;
+  width: 280px;
   height: 62px;
   margin-bottom: 0;
   text-align: left;
@@ -311,9 +311,9 @@ p {
   font-family: 'Droid Sans', 'Helvetica', 'Arial', 'Sans-Serif';
 }
 
-/*popout sidebar CSS*/
+/*popout sidebar*/
 .sidebar {
-  width: 100%;
+  width: 0;
   height: 100%;
   position: fixed;
   top: 0;
@@ -329,13 +329,7 @@ p {
 }
 
 /*sidebar button*/
-.nav-trigger {
-  display: block;
-  height: 0;
-  width: 0;
-}
-
-label[for="nav-trigger"] {
+.menu-button {
   position: fixed;
   z-index: 2;
   left: 0; 
@@ -353,22 +347,7 @@ label[for="nav-trigger"] {
   background-repeat: no-repeat;
 }
 
-.nav-trigger + label, .site-wrap {
-  transition: left 0.8s;
-  -moz-transition: left 0.8s;
-  -webkit-transition: left 0.8s;
-  -o-transition: left 0.8s;
-}
-
-.nav-trigger:checked + label {
-  left: 250px;
-}
-
-.nav-trigger:checked ~ .site-wrap {
-  left: 250px;
-}
-
-label[for="nav-trigger"]:hover {
+.menu-button:hover {
   background: white;
   color: #5398C8;
 }

@@ -11,11 +11,47 @@ $(document).ready(function() {
   
   //changing menu label text on click
   $('#label').click(function() {
-    if ($('#nav-trigger').is(':checked') == false) {
-      $('#label').html('<b><p class=\'plain-text\'> &#x25c4; menu</p></b>');
+    var sidebar = $('.sidebar');
+    var siteWrap = $('.site-wrap');
+    var menuButton = $(this);
+    if (siteWrap.css('left') == '0px') {
+      menuButton.html('<b><p class=\'plain-text\'> &#x25c4; menu</p></b>');
+      sidebar.animate({
+        width: 270
+      }, 500);
+      sidebar.animate({
+        width: 250
+      }, 200);
+      menuButton.animate({
+        left: 270
+      }, 500);
+      menuButton.animate({
+        left: 250
+      }, 200);
+      siteWrap.animate({
+        left: 270
+      }, 500);
+      siteWrap.animate({
+        left: 250
+      }, 200);
     }
     else {
       $('#label').html('<b><p class=\'plain-text\'>menu &#x25ba;</p></b>');
+      sidebar.animate({
+        width: 0
+      }, 500);
+      menuButton.animate({
+        left: -5
+      }, 500);
+      menuButton.animate({
+        left: 0
+      }, 200);
+      siteWrap.animate({
+        left: -5
+      }, 500);
+      siteWrap.animate({
+        left: 0
+      }, 200);
     }
   });
    
