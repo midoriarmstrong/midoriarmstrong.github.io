@@ -1,57 +1,56 @@
 $(document).ready(function() {
   //Going to correct anchor on clicking sidebar element
-  $('.sidebar a').click(function() {
-    var $url = $(this).attr('href');
-    var $offset =  $($url).position();
-    $('.site-wrap').animate({
-      scrollTop: $offset.top
-    }, 1000);
+  $('nav a').click(function() {
+	var tag = $($(this).attr('href'));
+	$('html, body').animate(
+		{scrollTop: tag.offset().top}, 1000
+	);
     return false;
   });
   
-  //changing menu label text on click
-  $('#label').click(function() {
-    var sidebar = $('.sidebar');
-    var siteWrap = $('.site-wrap');
-    var menuButton = $(this);
-    if (siteWrap.css('left') == '0px') {
-      menuButton.html('<b><p class=\'plain-text\'> &#x25c4; menu</p></b>');
-      sidebar.animate({
-        width: 270
-      }, 500);
-      sidebar.animate({
+  //Increasing image size on hover
+  $('.profile-pic').hover(
+    function() {
+      $('.profile-pic').animate({
+        width: 200, height: 200
+      }, 200);
+    },
+    function() {
+      $('.profile-pic').animate({
+        width: 70, height: 70
+      }, 200);
+  });
+  
+  //Opening nav on click
+  $('.nav-button').click(function() {
+    var moveLeft = [$('header'), $('.nav-button'), $('main')];
+    var nav = $('nav');
+    if (moveLeft[1].css('left') == '0px') {
+      nav.css("display", "block");
+      nav.animate({
         width: 250
       }, 200);
-      menuButton.animate({
-        left: 270
-      }, 500);
-      menuButton.animate({
-        left: 250
-      }, 200);
-      siteWrap.animate({
-        left: 270
-      }, 500);
-      siteWrap.animate({
-        left: 250
-      }, 200);
+	  
+      for (var i = 0; i < moveLeft.length; i++) {
+        moveLeft[i].animate({
+          left: 270
+        }, 500);
+        moveLeft[i].animate({
+          left: 250
+        }, 200);
+      }
     }
     else {
-      $('#label').html('<b><p class=\'plain-text\'>menu &#x25ba;</p></b>');
-      sidebar.animate({
+      nav.animate({
         width: 0
       }, 500);
-      menuButton.animate({
-        left: -5
-      }, 500);
-      menuButton.animate({
-        left: 0
-      }, 200);
-      siteWrap.animate({
-        left: -5
-      }, 500);
-      siteWrap.animate({
-        left: 0
-      }, 200);
+      for (var i = 0; i < moveLeft.length; i++) {
+        moveLeft[i].animate({
+            left: 0
+          }, 500, function() {
+            nav.css("display", "none");
+        });
+      }
     }
   });
    
@@ -64,57 +63,25 @@ $(document).ready(function() {
   });
   
   //Bringing up contact info on click
-  $('.footer').click(function() {
-    var footer = $('.footer');
+  $('footer').click(function() {
+    var footer = $('footer');
     var contactInfo = $('.contact-info');
-    var scrolled = $(this).scrollTop();
-    if (footer.css('bottom') == '0px') {
-      if ($('#scroll-to-top').css('display') == 'block') {
-        $('.scroll-to-top').animate({bottom: 410}, 650);
-        $('.scroll-to-top').animate({bottom: 385}, 200);
-      }
+    if (footer.css('bottom') == '-300px') {
       footer.animate({
-        bottom: 335
-      }, 700);
-      footer.animate({
-        bottom: 315
-      }, 200);
-      footer.html('<b><p class=\'plain-text\'>contact info &#x25BC;</p></b>');
-      contactInfo.animate({
-        height: 338
-      }, 700);
-      contactInfo.animate({
-        height: 318
-      }, 200);
+        bottom: -100, right: 0
+      }, 500);
+      footer.html('');
     }
     else {
-      $('.scroll-to-top').animate({bottom: 60}, 650);
-      $('.scroll-to-top').animate({bottom: 70}, 200);
       footer.animate({
-        bottom: -10
+        bottom: -300
       }, 500);
       footer.animate({
-        bottom: 0
-      }, 200);
-      footer.html('<b><p class=\'plain-text\'>contact info &#x25B2;</p></b>');
-      contactInfo.animate({
-        height: 0
-      }, 500);
-      if (scrolled > 200) {
-        $('.scroll-to-top').animate({bottom: '70px'}, 600);
-      }
-    }
-    return false;
-  });
-  
-  //Fading in go to top icon and footer on scrolling down far enough
-  $('.site-wrap').scroll(function() {
-    var scrolled = $(this).scrollTop();
-    if (scrolled > 200) {
-      $('.scroll-to-top').fadeIn(); 
-    }
-    else {
-      $('.scroll-to-top').fadeOut();
+        right: -300
+      }, 500, function() {      
+        footer.html('<b>&#x2709;</b>');
+      });
+
     }
     return false;
   });
