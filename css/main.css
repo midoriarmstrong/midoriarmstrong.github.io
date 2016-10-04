@@ -40,7 +40,7 @@ main {
   z-index: 0;
 }
 
-footer {
+.contact-form {
   background: white;  
   border-radius: 50%;    
   bottom: -300px;
@@ -52,8 +52,8 @@ footer {
   z-index: 1;
 }
 
-footer:hover {
-  background: #718ea0;
+.contact-form:hover {
+  background: #4c7187;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease-in-out;
@@ -66,6 +66,7 @@ footer:hover {
 
 a {
   color: #d2e4f1;
+  text-decoration: none;
 }
 
 a:visited {
@@ -103,7 +104,7 @@ h4 {
   font-size: 1.5rem;
 }
 
-footer > b {
+.contact-form > b {
   bottom: 0.2rem;
   font-size: 2rem;
   position: fixed;
@@ -208,15 +209,15 @@ img {
   margin: 0 auto;
   padding: 1rem;
   position: relative;
-  width: 45rem;
+  width: 740px;
   background-color: rgba(55,78,94,0.5);
 }
 
 section {
   background: #5a7e93;
   border-bottom: 3rem solid #4c7187;
-  margin-bottom: 5rem;
-  margin-top: 8rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .content-header {
@@ -225,7 +226,7 @@ section {
 }
 
 .content section:first-of-type {
-  margin-top: 6rem;
+  margin-top: 5rem;
 } 
 
 .content section:last-of-type {
@@ -238,8 +239,145 @@ section {
   margin-right: 7rem;
 }
 
+.mobile-menu {
+  display: none;
+}
+
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+@media screen and (max-width: 740px) {
+  .nav-button {
+    display: none;
+  }
+  
+  .mobile-menu {
+    background: #718ea0;
+    bottom: 0;
+    display: block;
+    height: 3rem;
+    margin-right: 4.5rem;
+    position: fixed;
+    width: 100%;
+  }
+  
+  .mobile-menu a {
+    color: white;
+    display: table-cell;
+    font-size: 2rem;
+    height: 3rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.2rem;
+    position: relative;
+  }
+  
+  .mobile-menu a:hover {
+    background: #dae0e4;
+    color: #718ea0;
+  }
+  
+  .content {
+    width: 100%;
+    padding: 0 0 1rem 0;
+  }
+  
+  section {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .content section:last-of-type {
+    margin-bottom: 3rem;
+  } 
+  
+  .subpage-icon {
+    width: 4rem !important;
+    height: 4rem !important;
+  }
+  
+  .margin-right {
+    margin-right: 1rem;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .profile-pic {
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+  }
+  
+  .subpage-icon {
+    width: 2.8rem !important;
+    height: 2.8rem !important;
+  }
+  
+  h1 {
+    float: left;
+    font-size: 2rem;
+    margin-left: 1rem;
+  }
+  
+  header {
+    height: 4rem;
+  }
+  
+  .mobile-menu a {
+    font-size: 1rem;
+    padding: 1rem;
+  }
+  
+  .content section:first-of-type {
+    margin-top: 5rem;
+  } 
+}
+
+@media screen and (max-width: 320px) {
+  .profile-pic {
+    display: none;
+  }
+  
+  .contact-form {
+    height: 375px;
+    width: 375px;
+  }
+  
+  .contact-form > b {
+    font-size: 1rem;
+    bottom: 0.05rem;
+  }
+  
+  p, .margin-right {
+    font-size: 0.8rem;
+    margin: 0.3rem 0.3rem 0 0.3rem;
+    padding-bottom: 0.3rem;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+    margin-left: 0.3rem;
+    text-align: left;
+  }
+  
+  section {
+    background: rgba(90, 126, 147, 0);
+    opacity: 50%;
+    border: none;
+    margin: 0;
+  }
+  
+  .content-header {
+    margin: 0;
+  }
+  
+  .content section:first-of-type {
+    margin-top: 4rem;
+  } 
 }

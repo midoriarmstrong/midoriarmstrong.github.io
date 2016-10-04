@@ -21,10 +21,10 @@ $(document).ready(function() {
       }, 200);
   });
   
-  //Opening nav on click
+  //Opening sidebar on click
   $('.nav-button').click(function() {
     var moveLeft = [$('header'), $('.nav-button'), $('main')];
-    var nav = $('nav');
+    var nav = $('.sidebar');
     if (moveLeft[1].css('left') == '0px') {
       nav.css("display", "block");
       nav.animate({
@@ -48,38 +48,31 @@ $(document).ready(function() {
         moveLeft[i].animate({
             left: 0
           }, 500, function() {
-            nav.css("display", "none");
+            nav.css("display", "");
         });
       }
     }
   });
-   
-  //Going to top of page on clicking go to top icon
-  $('#scroll-to-top').click(function() {
-    $('.site-wrap').animate({
-      scrollTop: $('#about').offset().top
-    }, 1000);
-    return false;
-  });
   
   //Bringing up contact info on click
-  $('footer').click(function() {
-    var footer = $('footer');
-    var contactInfo = $('.contact-info');
-    if (footer.css('bottom') == '-300px') {
-      footer.animate({
+  $('.contact-form').click(function() {
+    var contactForm = $('.contact-form');
+    if (contactForm.css('bottom') == '-300px') {
+      contactForm.animate({
         bottom: -100, right: 0
       }, 500);
-      footer.html('');
+      contactForm.html('');
+      contactForm.css("background-color", "white");
     }
     else {
-      footer.animate({
+      contactForm.animate({
         bottom: -300
       }, 500);
-      footer.animate({
+      contactForm.animate({
         right: -300
       }, 500, function() {      
-        footer.html('<b>&#x2709;</b>');
+        contactForm.html('<b>&#x2709;</b>');
+        contactForm.css("background-color", "");
       });
 
     }
