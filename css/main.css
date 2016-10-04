@@ -249,7 +249,7 @@ ul {
   padding: 0;
 }
 
-@media screen and (max-width: 740px) {
+@media handheld, screen and (max-width: 770px) {
   .nav-button {
     display: none;
   }
@@ -290,6 +290,10 @@ ul {
     margin-top: 2rem;
   }
   
+  .content section:first-of-type {
+    margin-top: 6rem;
+  } 
+  
   .content section:last-of-type {
     margin-bottom: 3rem;
   } 
@@ -304,7 +308,7 @@ ul {
   }
 }
 
-@media screen and (max-width: 500px) {
+@media handheld, screen and (max-width: 500px) {
   .profile-pic {
     width: 3.5rem !important;
     height: 3.5rem !important;
@@ -335,9 +339,9 @@ ul {
   } 
 }
 
-@media screen and (max-width: 320px) {
-  .profile-pic {
-    display: none;
+@media handheld, screen and (max-width: 320px) {
+  .subpage-icon {
+    margin-top: 0.1rem;
   }
   
   .contact-form {
