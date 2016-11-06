@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link href='https://fonts.googleapis.com/css?family=Advent+Pro:200' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Khand' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+  <link rel="icon" href="/assets/images/favicon.ico">  
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  
+  <title>{{ page.title }}</title>
+  
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="/js/main.js"></script>
+  {{ page.head }}
+</head>
+
+<body>
+  <header>  
+    <div>  
+      <ul>
+        <li><a href="https://github.com/midoriarmstrong"><span title="My Github" class="icon github"></span></a></li>
+        <li><a href="https://ca.linkedin.com/in/midori-armstrong-19433012b"><span title="My LinkedIn" class="icon linkedin"></span></a></li>
+        <li><a href="/"><img src="/assets/images/profile-pic.png" alt="My Profile Picture" style="width:6rem;height:6rem;"></a></li>
+        <li><a href="/assets/files/midoriarmstrong-resume.docx"><span title="R&#233;sum&#233; (DOCX)" class="icon word"></span></a></li>
+        <li><a href="/assets/files/midoriarmstrong-resume.pdf"><span title="R&#233;sum&#233; (PDF)" class="icon pdf"></span></a></li>  
+      </ul>
+    </div> 
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/discrete-math">Discrete Math Tools</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div>
+      <h1>{{ page.heading }}</h1>
+      {{ content }}
+      <section id="mail">
+        <span class="icon mail"></span> 
+        <h1>contact</h1>
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfdm-srLSGk6R751iyY7Ktb0kj2DaCQhcSphto3WIlxqbAOXQ/formResponse"  target="iframe">
+        <table>
+          <tr>
+            <td><label for="entry.565548433">Name:</label></td>
+            <td><input type="text" id="entry.565548433" name="entry.565548433" placeholder="Optional"></label></td></tr>
+          <tr>
+            <td><label for="entry.731334852">E-mail:</label></td>
+            <td><input type="text" id="entry.731334852" name="entry.731334852"></td></tr>
+          <tr>
+            <td><label for="entry.884456730">Subject:</label></td>
+            <td><input type="text" id="entry.884456730" name="entry.884456730" placeholder="Optional"></td></tr>
+          <tr>
+            <td><label for="entry.2051802972">Message:</label></td>
+            <td><textarea id="entry.2051802972" name="entry.2051802972"></textarea></td></tr>
+        </table>
+        <button type="submit">Submit</button>
+        </form>
+        <iframe name="iframe" id="iframe"></iframe>
+      </section>
+    </div>
+    <p>&#xA9; Copyright Midori Armstrong 2016</p>
+    <a href="#mail"><span></span></a>
+  </main>
+</body>
+</html>

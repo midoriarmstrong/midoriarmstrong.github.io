@@ -1,0 +1,100 @@
+---
+layout: base 
+title: Discrete Math 
+heading: Discrete Math Tools
+head: |
+  <link rel="stylesheet" type="text/css" href="css/discrete-math.css">
+  <script src="http://peterolson.github.com/BigInteger.js/BigInteger.min.js"></script>
+  <script src="js/discrete-math.js"></script>
+  <script src="js/main.js"></script>
+---
+<section id="eucliAlgo">
+  <h1>euclidean algorithm</h1>
+  <p>Please input two integers to find their greatest common divisor.</p>
+  <form>
+    <table>
+      <tr>
+        <td><label for="x">First:</label></td>
+        <td><input id="x" type="number"></td></tr>
+      <tr>
+        <td><label for="y">Second:</label></td>
+        <td><input id="y" type="number"></td></tr>
+    </table>
+
+    <button type="button">Solve</button>
+  </form>
+  
+  <div>
+    <h2>Results</h2>
+    <h3>Steps</h3>
+    <ul></ul>
+    <h3>Answer</h3>
+    <p></p>
+  </div>
+</section>
+
+<section id="linDio">
+  <h1>linear diophantine equation</h1>
+  
+  <p>Please input three integers to find the complete solution to <span><em>ax + by = c</em></span>, if it exists.</p>
+  <form>
+    <table>
+      <tr>
+        <td><label for="a">a:</label></td>
+        <td><input id="a" type="number"></td></tr>
+      <tr>
+        <td><label for="b">b:</label></td>
+        <td><input id="b" type="number"></td></tr>
+      <tr>
+        <td><label for="c">c:</label></td>
+        <td><input id="c" type="number"></td></tr>
+    </table>
+
+    <button type="button">Solve</button>
+  </form>
+  
+  <div>
+    <h2>Results</h2>
+    <h3>Steps</h3>
+    <h4>Finding GCD</h4>
+    <ul></ul>
+    <h4>Extended Euclidean Algorithm</h4>
+    <ul></ul>
+    <h3>Answer</h3>
+    <p></p>
+  </div>
+</section>
+
+<section id="linCong">
+  <h1>linear congruences</h1>
+  
+  <p>Please input three integers to find the complete solution to <span><em>ax &#x2261; b (mod n)</em></span>, if it exists.</p>
+  <form>
+    <table>
+      <tr>
+        <td><label for="f">a:</label></td>
+        <td><input id="f" type="number"></td></tr>
+      <tr>
+        <td><label for="g">b:</label></td>
+        <td><input id="g" type="number"></td></tr>
+      <tr>
+        <td><label for="n">n:</label></td>
+        <td><input id="n" type="number"></td></tr>
+    </table>
+
+    <button type="button">Solve</button>
+  </form>
+  
+  <div>
+    <h2>Results</h2>
+    <h3>Steps</h3>
+    <h4>Euclidean Algorithm</h4>
+    <ul></ul>
+    <h4>Extended Euclidean Algorithm</h4>
+    <ul></ul>
+    <h4>Simplifying Results</h4>
+    <ul></ul>
+    <h3>Answer</h3>
+    <p></p>
+  </div>
+</section>
