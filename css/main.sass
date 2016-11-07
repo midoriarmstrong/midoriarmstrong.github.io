@@ -59,7 +59,6 @@ body
             span 
             
               &.icon 
-                background-color: none
                 height: 34px 
                 margin-top: 2.438rem
                 width: 34px 
@@ -189,6 +188,7 @@ body
         span 
         
           &.icon 
+            background-color: $basedark
             border-radius: 50%
             float: right 
             height: 112px 
@@ -264,7 +264,6 @@ body
   // Icons
   .icon 
     background: url('/assets/images/icons.png')
-    background-color: $basedark
     display: inline-block 
 
 @media handheld, screen and (max-width: 800px)
@@ -341,3 +340,9 @@ body
         
       section 
         margin: .5rem 0
+        
+        
+@media handheld, screen and (max-width: 280px)
+
+  header, body main>div 
+    width: 280px
