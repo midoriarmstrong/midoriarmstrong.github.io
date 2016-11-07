@@ -10,16 +10,15 @@ $spritesheetY: 148px
 $baselighter: #cbdcdf
 $baselight: #bbdede
 $basecolour: #93B7BE
-$basedark: #554348
+$basedark: #564349
 $text: #4c4245
 $heading: #616161
-$link: #212121
+$link: #7f7f7f
 $linkvisited: #696969
 $linkhover: white
 
 body
-  background: $baselight
-  background-image: url('/assets/images/bg.png')
+  background: url("/assets/images/bg.png") $baselight repeat fixed
   color: $text 
   font-size: 16px
   font-family: 'Montserrat', 'Tahoma', 'Geneva', sans-serif
@@ -60,6 +59,7 @@ body
             span 
             
               &.icon 
+                background-color: none
                 height: 34px 
                 margin-top: 2.438rem
                 width: 34px 
@@ -226,7 +226,7 @@ body
         background-position: 34px -114px
         bottom: 0
         display: inline-block
-        height: 25px 
+        height: 23px 
         left: 0
         margin: auto 
         position: absolute 
