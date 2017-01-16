@@ -36,10 +36,8 @@ $(document).ready(function() {
     var results = findGCD(x, y);
     var div = $('#eucliAlgo > div');
     
-    if (div.is(':hidden')) { div.show(); }
-    
     // Hiding the results while content is being replaced
-    div.toggle('blind', function() {
+    div.slideUp(function() {
       // Displaying all headers
       div.children().show();
       
@@ -50,7 +48,7 @@ $(document).ready(function() {
       div.children('p').html('<span>gcd(' + bigInt(x) + ', ' + bigInt(y) + ') = ' + results.gcd + '</span>');
       
       // Reshowing the results once content has been replaced
-      div.toggle('blind');
+      div.slideDown();
     });
   });
   
@@ -75,10 +73,8 @@ $(document).ready(function() {
     var results = solveLinDiophantineEqn(a, b, c);
     var div = $('#linDio > div');
     
-    if (div.is(':hidden')) { div.show(); }
-    
     // Hiding the results while content is being replaced
-    div.toggle('blind', function() {
+    div.slideUp(function() {
       // Displaying all headers
       div.children().show();
       
@@ -123,7 +119,7 @@ $(document).ready(function() {
       }
 
       // Reshowing the results once content has been replaced
-      div.toggle('blind');
+      div.slideDown();
     });
   });
   
@@ -147,10 +143,8 @@ $(document).ready(function() {
     var results = solveCongruence(a, b, n);
     var div = $('#linCong > div');
     
-    if (div.is(':hidden')) { div.show(); }
-    
     // Hiding the results while content is being replaced
-    div.toggle('blind', function() {
+    div.slideUp(function() {
       // Displaying all headers
       div.children().show();
       
@@ -184,7 +178,12 @@ $(document).ready(function() {
       }
       
       // Reshowing the results once content has been replaced
-      div.toggle('blind');
+      div.slideDown();
+      
+      // Scrolling down to content once expanded
+      $('html, body').animate(
+        {scrollTop: $(document).height()}, 1000
+      );
     });
   });
 });

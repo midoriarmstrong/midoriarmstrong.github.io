@@ -46,10 +46,20 @@ body
           display: inline-block
           height: $topHeight
           padding: 0 .3rem
+          -webkit-transition: background .5s 
+          transition: background .5s 
           vertical-align: middle
           
+          &:hover 
+            background: $basecolour
+            
+          &.centre:hover 
+            background: none
+          
           >a 
+            display: block 
             line-height: $topHeight
+            height: $topHeight 
 
             img
               background: $basecolour
@@ -64,17 +74,18 @@ body
                 width: 34px 
                 
                 &.linkedin
-                  background-position: 69px -114px
+                  background-position: 69px -113px
                 
                 &.github 
                   border-radius: 50%
-                  background-position: 105px -114px
+                  background-position: 105px -113px
 
                 &.pdf 
-                  background-position: 140px -114px
+                  background-position: 140px -113px
                   
                 &.word 
-                  background-position: 175px -114px
+                  background-position: 175px -113px
+                  
     nav
       background: $baselight
       
@@ -86,12 +97,18 @@ body
 
         li 
           float: left
+          height: 3rem 
           line-height: 3rem
+          text-align: center
           transition: background-color 0.2s ease-in-out
           -webkit-transition: background-color 0.2s ease-in-out
           
           &:hover
             background-color: $basecolour
+            
+          &:last-of-type
+            cursor: pointer
+            display: none 
           
           a, a:visited 
             color: $text
@@ -101,6 +118,16 @@ body
             margin: 0
             padding: 0 1rem
           
+          span 
+            margin-top: .4rem 
+          
+            &.icon 
+              height: 35px 
+              width: 35px 
+            
+              &.hamburger 
+                background-position: 210px -113px
+
   main
     
     >div 
@@ -160,26 +187,26 @@ body
               resize: none
           
               
-        h1
+        h2
           border-bottom: .05rem solid $heading
           font-size: 2.5rem
           margin-right: 8rem
 
-        h2
+        h3
           font-size: 1.8rem
           margin-left: .5rem
           
           &:first-of-type
             margin-top: 1rem
             
-          ~ h3 
+          ~ h4 
             margin-top: 1rem
 
-        h3
+        h4
           font-size: 1.5rem
           margin-left: .8rem
           
-        h4 
+        h5 
           margin-left: 1rem
           
         iframe 
@@ -208,31 +235,32 @@ body
 
     >a, >a:visited
       background: $basedark
-      bottom: 0
-      border-top-left-radius: .3rem
-      height: 2rem
+      border-radius: 50%
+      bottom: .5rem
+      display: none
+      font-size: 1.3rem 
+      height: 2.5rem
       position: fixed
-      padding: .8rem
-      right: 0
-      width: 2rem
-      transition: width 0.5s
-      -webkit-transition: width 0.5s
+      right: .5rem
+      width: 2.5rem
+      text-align: center 
+      -webkit-transition: all .5s
+      transition: all .5s
+      z-index: 1
+      
+      span 
+        background: unset
+        color: $baselight
+        line-height: 2.5rem
+        -webkit-transition: line-height .5s
+        transition: line-height .5s
 
       &:hover
-        width: 3.5rem
-      
-      span
-        background: url('/assets/images/icons.png')
-        background-position: 34px -114px
-        bottom: 0
-        display: inline-block
-        height: 23px 
-        left: 0
-        margin: auto 
-        position: absolute 
-        top: 0
-        right: 0
-        width: 34px
+        height: 3rem 
+        width: 3rem
+        
+        span 
+          line-height: 3rem
         
     >p 
       color: $heading
@@ -260,6 +288,12 @@ body
   p
     margin: 1rem
     position: relative
+    
+    &.error 
+      color: #db4437
+      
+    &.success
+      color: #009688
     
   // Icons
   .icon 
@@ -324,25 +358,35 @@ body
         
 @media handheld, screen and (max-width: 400px)
 
-  header>div>ul img
-    height: 3.5rem !important
-    width: 3.5rem !important
+  body 
+  
+    header
+  
+      >div>ul img
+        height: 3.5rem !important
+        width: 3.5rem !important
+        
+      nav ul li 
+        display: none 
+        width: 100%
+        
+        &:last-of-type
+          display: inline-block 
     
-  body main
-      
-    >div
-      margin-top: .5rem 
-      
-      >h1 
-        font-size: 2.2rem 
-        margin: 0
-        padding: .4rem 
+    main
         
-      section 
-        margin: .5rem 0
+      >div
+        margin-top: .5rem 
         
+        >h1 
+          font-size: 2.2rem 
+          margin: 0
+          padding: .4rem 
+          
+        section 
+          margin: .5rem 0
         
-@media handheld, screen and (max-width: 280px)
+@media handheld, screen and (max-width: 290px)
 
   header, body main>div 
     width: 280px
